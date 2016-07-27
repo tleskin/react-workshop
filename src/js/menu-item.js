@@ -30,7 +30,7 @@ let MenuItem = React.createClass({
     
     return (
       <li style={style} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
-        Menu Item
+        {this.props.name}
       </li>
     )
   }
