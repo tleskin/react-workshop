@@ -1,3 +1,12 @@
 let MenuItem = require('./menu-item');
 
-ReactDOM.render( <MenuItem />, document.getElementById('app'));
+function Menu () {
+  return (
+    <ul>
+      <MenuItem />
+      <MenuItem />
+    </ul>
+  )
+}
+
+ReactDOM.render( <Menu />, document.getElementById('app'));
