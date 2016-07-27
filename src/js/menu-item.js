@@ -14,11 +14,11 @@ let MenuItem = React.createClass({
     }
   },
   
-  mouseOver: function () {
+  mouseOver() {
     this.setState({isHovering: true});
   },
   
-  mouseOut: function () {
+  mouseOut() {
     this.setState({isHovering: false});
   },
   
