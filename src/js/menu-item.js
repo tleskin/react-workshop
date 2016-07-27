@@ -1,10 +1,4 @@
-let MenuItem = React.createClass({
-  getDefaultProps(){
-    return {
-      isActive: false
-    }
-  },
-  
+let MenuItem = React.createClass({  
   getInitialState(){
     let subMenuVisible = this.props.isActive ? true : false
     
@@ -22,14 +16,18 @@ let MenuItem = React.createClass({
     this.setState({isHovering: false});
   },
   
+  changeOption(){
+    this.props.onActivate(this.props.id)
+  },
+  
   render() {
     let style = {
-      fontWeight: this.state.subMenuVisible ? 'bold' : 'normal',
+      fontWeight: this.props.isActive ? 'bold' : 'normal',
       color: this.state.isHovering ? 'green' : 'black'
     }
     
     return (
-      <li style={style} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
+      <li style={style} onClick={this.changeOption} onMouseOver={this.mouseOver} onMouseOut={this.mouseOut}>
         {this.props.name}
       </li>
     )

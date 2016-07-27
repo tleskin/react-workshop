@@ -1,4 +1,15 @@
 let MenuItem = require('./menu-item');
-let Menu = require('./menu');
+let SelectableGroup = require('./selectable-group');
 
-ReactDOM.render( <Menu isActive={true} />, document.getElementById('app'));
+let items = [
+  'Home',
+  'Search',
+  'About',
+  'Contact'
+];
+
+let menuItems = items.map(function(item, index) {
+  return <MenuItem key={index} name={item} />
+});
+
+ReactDOM.render( <SelectableGroup children={menuItems} items={items} activeMenu={0} isActive={true} />, document.getElementById('app'));
