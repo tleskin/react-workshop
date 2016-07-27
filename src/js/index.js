@@ -1,12 +1,12 @@
 let MenuItem = require('./menu-item');
 
-function Menu () {
+function Menu (props) {
   return (
     <ul>
-      <MenuItem />
+      <MenuItem isActive={props.isActive} />
       <MenuItem />
     </ul>
   )
 }
 
-ReactDOM.render( <Menu />, document.getElementById('app'));
+ReactDOM.render( <Menu isActive={true} />, document.getElementById('app'));

@@ -1,6 +1,10 @@
-function MenuItem() {
+function MenuItem({isActive = false}) {
+  let style = {
+    fontWeight: isActive ? 'bold' : 'normal'
+  }
+  
   return (
-    <li>Menu Item</li>
+    <li style={style}>Menu Item</li>
   )
 }
 
